@@ -985,13 +985,13 @@ def main():
         logger.info("⏳ Starting polling...")
         
         # Запускаем бота в отдельном потоке
-        def run_bot():
-            # stop_signals=None предотвращает ошибку запуска в потоке
+                def run_bot():
             application.run_polling(
                 allowed_updates=Update.ALL_TYPES,
                 drop_pending_updates=True,
-                stop_signals=None 
+                stop_signals=None
             )
+                    
                     
         
         bot_thread = Thread(target=run_bot)
