@@ -986,11 +986,19 @@ def main():
         
         # Запускаем бота в отдельном потоке
         def run_bot():
+            import asyncio
+            
+            # Создаем новый цикл событий для этого потока
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            
+            # Запускаем бота
             application.run_polling(
                 allowed_updates=Update.ALL_TYPES,
                 drop_pending_updates=True,
                 stop_signals=None
             )
+            
                     
                     
         
