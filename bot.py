@@ -986,10 +986,13 @@ def main():
         
         # Запускаем бота в отдельном потоке
         def run_bot():
+            # stop_signals=None предотвращает ошибку запуска в потоке
             application.run_polling(
                 allowed_updates=Update.ALL_TYPES,
-                drop_pending_updates=True
+                drop_pending_updates=True,
+                stop_signals=None 
             )
+                    
         
         bot_thread = Thread(target=run_bot)
         bot_thread.start()
