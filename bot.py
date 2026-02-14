@@ -985,7 +985,7 @@ def main():
         logger.info("⏳ Starting polling...")
         
         # Запускаем бота в отдельном потоке
-                def run_bot():
+        def run_bot():
             application.run_polling(
                 allowed_updates=Update.ALL_TYPES,
                 drop_pending_updates=True,
